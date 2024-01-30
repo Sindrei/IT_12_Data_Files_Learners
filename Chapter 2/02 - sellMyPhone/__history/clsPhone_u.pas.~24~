@@ -3,7 +3,7 @@ unit clsPhone_u;
 interface
 
 uses
-  System.DateUtils, System.StrUtils, SysUtils;
+  System.DateUtils, SysUtils;
 
 type
   TPhone = class(TObject)
@@ -18,7 +18,7 @@ type
     { Public declarations }
     constructor create(sBrand: String; sModel: String; sOwner: String;
       dtPurchaseDate: TDateTime; dtListDate: TDateTime; rPrice: Real);
-    function getPrice(): Double;
+    function getPrice(): Real;
     procedure setPrice(rPrice: Real);
     function calculateAge: Integer;
     function toString: String;
@@ -28,12 +28,15 @@ implementation
 
 { TPhone }
 
-// Constructor
 function TPhone.calculateAge: Integer;
+var
+  NumDays: Integer;
 begin
-
+  NumDays := round(now - fPurchaseDate);
+  result := NumDays DIV 365;
 end;
 
+// Constructor
 constructor TPhone.create(sBrand, sModel, sOwner: String;
   dtPurchaseDate, dtListDate: TDateTime; rPrice: Real);
 begin
@@ -44,7 +47,7 @@ begin
   fPrice := rPrice;
 end;
 
-function TPhone.getPrice: Double;
+function TPhone.getPrice: Real;
 begin
   result := fPrice;
 end;
@@ -57,8 +60,8 @@ end;
 function TPhone.toString: String;
 begin
   result := 'Brand: ' + fBrand + #10 + 'Model: ' + fModel + #10 + 'Owner: ' +
-    fOwner + #10 + 'Purchase Date: ' + #10 + formatDateTime('dd/mm/yyyy' , fPurchaseDate) + #10 +
-    floattostr(fPrice);
+    fOwner + #10 + 'Purchase Date: ' + #10 + formatDateTime('dd/mm/yyyy',
+    fPurchaseDate) + #10 + floattostrf(fPrice, ffCurrency, 8, 2);
 end;
 
 end.

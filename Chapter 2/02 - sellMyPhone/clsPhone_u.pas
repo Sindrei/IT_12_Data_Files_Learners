@@ -22,6 +22,7 @@ type
     procedure setPrice(rPrice: Real);
     function calculateAge: Integer;
     function toString: String;
+    function getName: String;
   end;
 
 implementation
@@ -45,6 +46,11 @@ begin
   fOwner := sOwner;
   fPurchaseDate := dtPurchaseDate;
   fPrice := rPrice;
+end;
+
+function TPhone.getName: String;
+begin
+  result := fBrand + ' ' + fModel;
 end;
 
 function TPhone.getPrice: Real;
