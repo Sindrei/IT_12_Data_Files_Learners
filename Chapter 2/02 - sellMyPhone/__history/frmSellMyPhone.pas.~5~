@@ -32,8 +32,6 @@ type
 
 var
   Form1: TForm1;
-  objPhone: TPhone;
-  iRow: Integer = 0;
 
 implementation
 
@@ -42,24 +40,15 @@ implementation
 procedure TForm1.btnSaveClick(Sender: TObject);
 var
   sBrand, sModel, sOwner: String;
-  dtPurchaseDate, dtListDate: TDateTime;
-  rPrice: Real;
+  dtPurchaseDate: TDateTime;
+  dPrice: Double;
 begin
   // add test code here
   sBrand := cbxBrand.Text;
   sModel := edtModel.Text;
   sOwner := edtOwner.Text;
   dtPurchaseDate := DateTimePicker1.DateTime;
-  rPrice := StrToFloat(edtPrice.Text);
-  dtListDate := Now;
-
-  objPhone := TPhone.Create(sBrand, sModel, sOwner, dtPurchaseDate,
-    dtListDate, rPrice);
-
-  inc(iRow);
-  sgrPhones.Cells[0, iRow] := objPhone.getName;
-  sgrPhones.Cells[1, iRow] := inttostr(objPhone.calculateAge);
-  sgrPhones.Cells[2, iRow] := FloatToStrF(objPhone.getPrice, ffCurrency, 8, 2);
+   dPrice := StrToFloat(edtPrice.Text);
 end;
 
 // given code do not remove

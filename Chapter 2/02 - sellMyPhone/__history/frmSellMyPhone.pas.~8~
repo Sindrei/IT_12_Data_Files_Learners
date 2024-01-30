@@ -33,7 +33,6 @@ type
 var
   Form1: TForm1;
   objPhone: TPhone;
-  iRow: Integer = 0;
 
 implementation
 
@@ -53,13 +52,8 @@ begin
   rPrice := StrToFloat(edtPrice.Text);
   dtListDate := Now;
 
-  objPhone := TPhone.Create(sBrand, sModel, sOwner, dtPurchaseDate,
+  objPhone := TPHone.Create(sBrand, sModel, sOwner, dtPurchaseDate,
     dtListDate, rPrice);
-
-  inc(iRow);
-  sgrPhones.Cells[0, iRow] := objPhone.getName;
-  sgrPhones.Cells[1, iRow] := inttostr(objPhone.calculateAge);
-  sgrPhones.Cells[2, iRow] := FloatToStrF(objPhone.getPrice, ffCurrency, 8, 2);
 end;
 
 // given code do not remove

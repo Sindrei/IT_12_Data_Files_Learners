@@ -57,9 +57,8 @@ begin
     dtListDate, rPrice);
 
   inc(iRow);
-  sgrPhones.Cells[0, iRow] := objPhone.getName;
-  sgrPhones.Cells[1, iRow] := inttostr(objPhone.calculateAge);
-  sgrPhones.Cells[2, iRow] := FloatToStrF(objPhone.getPrice, ffCurrency, 8, 2);
+  // sgrPhonesCells[]
+
 end;
 
 // given code do not remove

@@ -2,8 +2,7 @@ program SellMyPhone;
 
 uses
   Forms,
-  frmSellMyPhone in 'frmSellMyPhone.pas' {Form1},
-  clsPhone_u in 'clsPhone_u.pas';
+  frmSellMyPhone in 'frmSellMyPhone.pas' {Form1};
 
 {$R *.res}
 
