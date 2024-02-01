@@ -1,0 +1,74 @@
+unit clsCar_u;
+
+interface
+
+uses
+  System.SysUtils;
+
+implementation
+
+type
+  TCar = class
+  private
+    { Private declarations }
+    fModel: String;
+    fBrand: String;
+    fYear: Integer;
+    fRetailPrice: Real;
+  public
+    { Public declarations }
+    // default constructor
+    // constructor create();
+    // parameterised constructor
+    constructor create(sModel, sBrand: String; iYear: Integer;
+      rRetailPrice: Real);
+    function getDetailedModel: String;
+    procedure setRetailPrice(rPrice: Real);
+    function getRetailPrice: Real;
+    function getVATPrice: Real;
+    function toString: String;
+
+  end;
+
+  { TCar }
+
+constructor TCar.create;
+begin
+
+end;
+
+constructor TCar.create(sModel, sBrand: String; iYear: Integer;
+  rRetailPrice: Real);
+begin
+  fModel := sModel;
+  fBrand := sBrand;
+  fYear := iYear;
+  fRetailPrice := rRetailPrice;
+end;
+
+function TCar.getDetailedModel: String;
+begin
+  result := inttostr(fYear) + ' ' + fBrand + ' ' + fModel;
+end;
+
+function TCar.getRetailPrice: Real;
+begin
+
+end;
+
+function TCar.getVATPrice: Real;
+begin
+
+end;
+
+procedure TCar.setRetailPrice(rPrice: Real);
+begin
+
+end;
+
+function TCar.toString: String;
+begin
+
+end;
+
+end.

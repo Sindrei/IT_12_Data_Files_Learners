@@ -2,8 +2,7 @@ program CarPriceList;
 
 uses
   Forms,
-  frmCar in 'frmCar.pas' {Form1},
-  clsCar_u in 'clsCar_u.pas';
+  frmCar in 'frmCar.pas' {Form1};
 
 {$R *.res}
 

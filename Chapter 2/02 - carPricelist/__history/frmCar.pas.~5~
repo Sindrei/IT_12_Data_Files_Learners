@@ -28,39 +28,31 @@ type
 
 var
   Form1: TForm1;
-  objCar: TCar;
-  iRow: Integer;
+  iRow : Integer;
+  objCar : tCar;
 
 implementation
+
 
 {$R *.dfm}
 
 procedure TForm1.btnSaveClick(Sender: TObject);
-var
-  sModel, sBrand: String;
-  iYear: Integer;
-  rRetailPrice: Real;
-begin
-  // inputs
-  sModel := edtModel.Text;
-  sBrand := cbxBrand.Text;
-  iYear := sedYear.Value;
-  rRetailPrice := StrToFloat(edtPrice.Text);
-  // create object
-  objCar := TCar.create(sModel, sBrand, iYear, rRetailPrice);
-  // call object methods and display ingrid
-  sgrCars.Cells[0, iRow] := objCar.getDetailedModel;
-  sgrCars.Cells[1, iRow] := FloatToStrF(objCar.getVATPrice, ffCurrency, 10, 2);
-  inc(iRow);
-end;
 
-// given code do not remove
+begin
+//inputs
+
+//create object
+
+//call object methods and display ingrid
+
+end;
+//given code do not remove
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  sgrCars.Cells[0, 0] := 'Description';
-  sgrCars.Cells[1, 0] := 'Price+VAT';
-  sedYear.MaxValue := StrToInt(Formatdatetime('YYYY', now));
-  iRow := 1;
+ sgrCars.Cells[0, 0] := 'Description';
+ sgrCars.Cells[1, 0] := 'Price+VAT';
+ sedYear.MaxValue:= StrToInt(Formatdatetime('YYYY',now));
+ iRow := 1;
 end;
 
 end.

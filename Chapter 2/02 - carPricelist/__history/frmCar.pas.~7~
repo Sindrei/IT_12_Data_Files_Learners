@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, ExtCtrls, StdCtrls, Spin, pngimage, Vcl.Mask, clsCar_u;
+  Dialogs, Grids, ExtCtrls, StdCtrls, Spin, pngimage, Vcl.Mask clsCar_u;
 
 type
   TForm1 = class(TForm)
@@ -26,6 +26,8 @@ type
     { Public declarations }
   end;
 
+
+
 var
   Form1: TForm1;
   objCar: TCar;
@@ -36,22 +38,14 @@ implementation
 {$R *.dfm}
 
 procedure TForm1.btnSaveClick(Sender: TObject);
-var
-  sModel, sBrand: String;
-  iYear: Integer;
-  rRetailPrice: Real;
+
 begin
   // inputs
-  sModel := edtModel.Text;
-  sBrand := cbxBrand.Text;
-  iYear := sedYear.Value;
-  rRetailPrice := StrToFloat(edtPrice.Text);
+
   // create object
-  objCar := TCar.create(sModel, sBrand, iYear, rRetailPrice);
+
   // call object methods and display ingrid
-  sgrCars.Cells[0, iRow] := objCar.getDetailedModel;
-  sgrCars.Cells[1, iRow] := FloatToStrF(objCar.getVATPrice, ffCurrency, 10, 2);
-  inc(iRow);
+
 end;
 
 // given code do not remove

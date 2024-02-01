@@ -49,9 +49,7 @@ begin
   // create object
   objCar := TCar.create(sModel, sBrand, iYear, rRetailPrice);
   // call object methods and display ingrid
-  sgrCars.Cells[0, iRow] := objCar.getDetailedModel;
-  sgrCars.Cells[1, iRow] := FloatToStrF(objCar.getVATPrice, ffCurrency, 10, 2);
-  inc(iRow);
+
 end;
 
 // given code do not remove
