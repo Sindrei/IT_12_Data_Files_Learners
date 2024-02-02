@@ -1,0 +1,114 @@
+unit clsSong_u;
+
+interface
+
+type
+  TSong = class
+  private
+    fArtist: String;
+    fSong: String;
+    fAlbum: String;
+    fTrackNumber: Integer;
+    fDuration: Integer;
+  public
+    // Constructor
+    constructor create(sArtist, sSong, sAlbum: String;
+      iTrackNumber, iDuration: Integer);
+    // accessor function (get)
+    function getArtist: String;
+    function getSong: String;
+    function getAlbum: String;
+    function getTrackNumber: Integer;
+    function getDuration: Integer;
+    // mutator methods (set)
+    procedure setArtist;
+    procedure setSong;
+    procedure setAlbum;
+    procedure setTrackNumber;
+    procedure setDuration;
+    // toString method
+    function toString: String;
+    function getQuickReference: String;
+    function getMinuteDuration: String;
+  end;
+
+implementation
+
+{ TSong }
+
+constructor TSong.create(sArtist, sSong, sAlbum: String;
+  iTrackNumber, iDuration: Integer);
+begin
+  fArtist := sArtist;
+  fSong := sSong;
+  fAlbum := sAlbum;
+  fTrackNumber := iTrackNumber;
+  fDuration := iDuration;
+end;
+
+function TSong.getAlbum: String;
+begin
+
+end;
+
+function TSong.getArtist: String;
+begin
+
+end;
+
+function TSong.getDuration: Integer;
+begin
+
+end;
+
+function TSong.getMinuteDuration: String;
+begin
+
+end;
+
+function TSong.getQuickReference: String;
+begin
+
+end;
+
+function TSong.getSong: String;
+begin
+
+end;
+
+function TSong.getTrackNumber: Integer;
+begin
+
+end;
+
+procedure TSong.setAlbum;
+begin
+
+end;
+
+procedure TSong.setArtist;
+begin
+
+end;
+
+procedure TSong.setDuration;
+begin
+
+end;
+
+procedure TSong.setSong;
+begin
+
+end;
+
+procedure TSong.setTrackNumber;
+begin
+
+end;
+
+function TSong.toString: String;
+begin
+
+end;
+
+end.

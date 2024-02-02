@@ -1,0 +1,35 @@
+unit clsSong_u;
+
+interface
+
+type
+  TSong = class
+  private
+    fArtist: String;
+    fSong: String;
+    fAlbum: String;
+    fTrackNumber: Integer;
+    fDuration: Integer;
+  public
+    // Constructor
+    constructor create(sArtist, sSong, sAblum: String;
+      iTrackNumber, iDuration: Integer);
+    // accessor function (get)
+    function getArtist: String;
+    function getSong: String;
+    function getAlbum: String;
+    function getTrackNumber: Integer;
+    function getDuration: Integer;
+    // mutator methods (set)
+    procedure setArtist;
+    procedure setSong;
+    procedure setAlbum;
+    procedure setTrackNumber;
+    procedure setDuration;
+    // toString method
+    function toString: String;
+  end;
+
+implementation
+
+end.
