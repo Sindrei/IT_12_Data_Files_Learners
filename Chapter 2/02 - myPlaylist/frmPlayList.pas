@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Spin, ExtCtrls, Grids;
+  Dialogs, StdCtrls, Spin, ExtCtrls, Grids, Vcl.Mask;
 
 type
   TfrmSong = class(TForm)

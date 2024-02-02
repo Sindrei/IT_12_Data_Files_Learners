@@ -10,9 +10,7 @@ object frmSong: TfrmSong
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 16
@@ -70,6 +68,7 @@ object frmSong: TfrmSong
     EditLabel.Height = 13
     EditLabel.Caption = 'Artist'
     TabOrder = 1
+    Text = ''
   end
   object edtSong: TLabeledEdit
     Left = 16
@@ -80,6 +79,7 @@ object frmSong: TfrmSong
     EditLabel.Height = 13
     EditLabel.Caption = 'Song'
     TabOrder = 2
+    Text = ''
   end
   object edtAlbum: TLabeledEdit
     Left = 255
@@ -90,6 +90,7 @@ object frmSong: TfrmSong
     EditLabel.Height = 13
     EditLabel.Caption = 'Album'
     TabOrder = 3
+    Text = ''
   end
   object sedTrackNumber: TSpinEdit
     Left = 256
@@ -119,5 +120,6 @@ object frmSong: TfrmSong
     EditLabel.Height = 13
     EditLabel.Caption = 'Duration (seconds)'
     TabOrder = 6
+    Text = ''
   end
 end
