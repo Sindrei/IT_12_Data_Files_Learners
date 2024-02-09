@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, pngimage;
+  Dialogs, StdCtrls, ExtCtrls, pngimage, clsQuadratic_u;
 
 type
   TForm1 = class(TForm)
@@ -29,9 +29,9 @@ type
 
 var
   Form1: TForm1;
+  objQuadratic: TQuadratic;
 
 implementation
-
 
 {$R *.dfm}
 
@@ -57,16 +57,30 @@ begin
       begin
         if (a <> 0) AND (b <> 0) AND (c <> 0) then
         begin
-         
+          objQuadratic := TQuadratic.create(a, b, c);
+          case rgpType.ItemIndex of
+            // rational roots
+            0:
+              if objQuadratic.hasRationalRoots = True then
+                lstOutput.Items.Add(objQuadratic.toString + #9 +
+                  objQuadratic.calculateRoots);
+            // Irrational roots
+            1:
+              if objQuadratic.hasRationalRoots = False then
+                lstOutput.Items.Add(objQuadratic.toString + #9 +
+                  objQuadratic.calculateRoots);
+          end;
         end;
       end;
 end;
-//given code save to file
+
+// given code save to file
 procedure TForm1.btnSaveClick(Sender: TObject);
 begin
   lstOutput.Items.SaveToFile('QuadEqn.txt');
 end;
- //given code shuffle the list
+
+// given code shuffle the list
 procedure TForm1.btnShuffleListClick(Sender: TObject);
 var
   count, i: Integer;
@@ -78,7 +92,7 @@ begin
   begin
     index1 := Random(count);
     index2 := Random(count);
-    lstOutput.items.Exchange(index1, index2);
+    lstOutput.Items.Exchange(index1, index2);
   end;
 end;
 
