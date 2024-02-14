@@ -2,7 +2,8 @@ program coneCalculations;
 
 uses
   Forms,
-  frmConeCalculations in 'frmConeCalculations.pas' {Form1};
+  frmConeCalculations in 'frmConeCalculations.pas' {Form1},
+  coneClass in 'coneClass.pas';
 
 {$R *.res}
 
