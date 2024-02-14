@@ -61,9 +61,14 @@ function TQuadratic.hasRationalRoots: Boolean;
 var
   discriminantSqrt: Double;
 begin
-  discriminantSqrt := sqrt(calculateDiscriminant);
-  if Frac(discriminantSqrt) = 0.0 then
-    result := True
+  if calculateDiscriminant > 0 then
+  begin
+    discriminantSqrt := sqrt(calculateDiscriminant);
+    if Frac(discriminantSqrt) = 0.0 then
+      result := True
+    else
+      result := False;
+  end
   else
     result := False;
 end;
