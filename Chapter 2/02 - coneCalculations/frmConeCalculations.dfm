@@ -205,7 +205,7 @@ object Form1: TForm1
   end
   object Image2: TImage
     Left = 322
-    Top = 111
+    Top = 93
     Width = 259
     Height = 57
   end
@@ -404,8 +404,8 @@ object Form1: TForm1
     OnClick = btnSlantHeightClick
   end
   object btnVolume: TButton
-    Left = 177
-    Top = 359
+    Left = 178
+    Top = 355
     Width = 125
     Height = 30
     Caption = 'Volume'
@@ -423,12 +423,33 @@ object Form1: TForm1
     TabOrder = 2
     OnClick = btnSurfaceAreaClick
   end
-  object Memo1: TMemo
+  object Memo1: TRichEdit
     Left = 322
-    Top = 194
+    Top = 183
     Width = 259
-    Height = 195
-    ScrollBars = ssVertical
+    Height = 168
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
+  end
+  object cbxCone: TComboBox
+    Left = 322
+    Top = 156
+    Width = 259
+    Height = 21
+    TabOrder = 4
+  end
+  object btnDisplay: TButton
+    Left = 322
+    Top = 357
+    Width = 259
+    Height = 25
+    Caption = 'Display Cone Information'
+    TabOrder = 5
+    OnClick = btnDisplayClick
   end
 end

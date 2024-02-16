@@ -18,6 +18,8 @@ type
     function volume: Real;
     function surfaceArea: Real;
     function toString: String;
+    function getBaseDiameter: Real;
+    function getHeight : Real;
   end;
 
 implementation
@@ -35,6 +37,16 @@ begin
   self.baseDiameter := baseDiameter;
 end;
 
+function TCone.getBaseDiameter: Real;
+begin
+result := baseDiameter;
+end;
+
+function TCone.getHeight: Real;
+begin
+ result := Height;
+end;
+
 function TCone.slantHeight: Real;
 begin
   result := Sqrt(sqr(baseRadius) + sqr(Height));
@@ -47,9 +59,9 @@ end;
 
 function TCone.toString: String;
 begin
-  result := 'Slant Height: ' + FloatToStrF(slantHeight, ffFixed, 8, 2) + #10 +
-    'Volume: ' + FloatToStrF(volume, ffFixed, 8, 2) + #10 + 'Surface Area: ' +
-    FloatToStrF(surfaceArea, ffFixed, 8, 2);
+  result := 'Slant Height: ' + FloatToStrF(slantHeight, ffFixed, 8, 5) + #10#10
+    + 'Surface Area: ' + FloatToStrF(surfaceArea, ffFixed, 8, 5) + #10#10 +
+    'Volume: ' + FloatToStrF(volume, ffFixed, 8, 5);
 end;
 
 function TCone.volume: Real;
