@@ -49,10 +49,11 @@ begin
   index := cbxCone.ItemIndex + 1;
 
   Memo1.Clear;
-  Memo1.Lines.Add('Calculations for cone' + #10#13 + 'New Cone object created:'
+  Memo1.Lines.Add(objCone[cbxCone.ItemIndex + 1].toString);
+  { Memo1.Lines.Add('Calculations for cone' + #10#13 + 'New Cone object created:'
     + #13 + 'Height: ' + FloatToStrf(objCone[index].getHeight, ffFixed, 8, 2) +
     #13 + 'Diameter of base: ' + FloatToStrf(objCone[index].getBaseDiameter,
-    ffFixed, 8, 2) + #10#13);
+    ffFixed, 8, 2) + #10); }
 
 end;
 
@@ -61,6 +62,9 @@ Begin
   Image2.Stretch := True;
   Image2.Picture.LoadFromFile('SlantHeight2.png');
   // enter code here
+  Memo1.Lines.Add('Slant height: ' + #9 +
+    FloatToStrf(objCone[cbxCone.ItemIndex + 1].slantHeight, ffFixed, 8,
+    5) + #10);
 
 End;
 
@@ -68,14 +72,17 @@ Procedure TForm1.btnVolumeClick(Sender: TObject);
 Begin
   Image2.Picture.LoadFromFile('Volume.png');
   // enter code here
-
+  Memo1.Lines.Add('Slant volume: ' + #9 +
+    FloatToStrf(objCone[cbxCone.ItemIndex + 1].volume, ffFixed, 8, 5) + #10);
 End;
 
 Procedure TForm1.btnSurfaceAreaClick(Sender: TObject);
 Begin
   Image2.Picture.LoadFromFile('SurfaceArea.png');
   // enter code here
-
+  Memo1.Lines.Add('Surface area: ' + #9 +
+    FloatToStrf(objCone[cbxCone.ItemIndex + 1].surfaceArea, ffFixed, 8,
+    5) + #10);
 End;
 
 procedure TForm1.sbnNewConeClick(Sender: TObject);
