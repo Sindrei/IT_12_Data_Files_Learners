@@ -59,10 +59,6 @@ end;
 
 function TCone.toString: String;
 begin
-  { result := 'Slant Height: ' + FloatToStrF(slantHeight, ffFixed, 8, 5) + #10#10
-    + 'Surface Area: ' + FloatToStrF(surfaceArea, ffFixed, 8, 5) + #10#10 +
-    'Volume: ' + FloatToStrF(volume, ffFixed, 8, 5); }
-
   result := 'Calculations for cone' + #10#13 + 'New Cone object created:' + #13
     + 'Height: ' + FloatToStrf(getHeight, ffFixed, 8, 2) + #13 +
     'Diameter of base: ' + FloatToStrf(getBaseDiameter, ffFixed, 8, 2) + #10;
