@@ -35,14 +35,17 @@ var
   i: Integer;
 begin
   iGuestNum := StrToInt(edtGuestNumber.Text);
+  redDisplay.Clear;
 
-  for i := Low(arrObjItems) to High(arrObjItems) do
+  for i := low(arrObjItems) to high(arrObjItems) do
   begin
     if iGuestNum = arrObjItems[i].getGuestNum then
     begin
       redDisplay.Lines.Add(arrObjItems[i].toString);
     end;
   end;
+
+  // redDisplay.Lines.Add(inttostr(arrObjItems[2].getGuestNum));
 end;
 
 procedure TfrmQuestion2.FormActivate(Sender: TObject);
@@ -58,7 +61,7 @@ begin
   // Read text file
   if NOT(FileExists('Extras.txt')) then
   begin
-    ShowMessage('The file does not exist!');
+    showMessage('The file does not exist!');
     Application.Terminate;
   end
   else
@@ -76,7 +79,7 @@ begin
 
     setLength(arrObjItems, iCount);
     Reset(myFile);
-    iCount := 1;
+    iCount := 0;
 
     while not(Eof(myFile)) do
     begin
@@ -85,7 +88,6 @@ begin
       iPos := Pos('#', sLine);
       iGuestNum := StrToInt(Copy(sLine, 1, iPos - 1));
       Delete(sLine, 1, iPos);
-      ShowMessage(inttostr(iGuestNum));
 
       iPos := Pos('#', sLine);
       Delete(sLine, 1, iPos);
@@ -94,10 +96,9 @@ begin
       iPos := Pos('#', sLine);
       sItemType := Copy(sLine, 1, iPos - 1);
       Delete(sLine, 1, iPos);
-      ShowMessage(sItemType);
+
       // Price
       rPrice := StrToFloat(Copy(sLine, 1, length(sLine)));
-      ShowMessage(FloatToStr(rPrice));
 
       arrObjItems[iCount] := TExtraItem.create(iGuestNum, sItemType, rPrice);
       iCount := iCount + 1;
