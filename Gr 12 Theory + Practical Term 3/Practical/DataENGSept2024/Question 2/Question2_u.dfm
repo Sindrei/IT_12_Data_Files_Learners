@@ -31,6 +31,8 @@ object frmQuestion2: TfrmQuestion2
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 874
+    ExplicitHeight = 570
     object tsQ2_1: TTabSheet
       Caption = 'Question 2.1 SQL'
       object gbQ2_1: TGroupBox
@@ -128,6 +130,7 @@ object frmQuestion2: TfrmQuestion2
         Align = alTop
         Caption = 'Users'
         TabOrder = 0
+        ExplicitWidth = 856
         object dbgClients: TDBGrid
           AlignWithMargins = True
           Left = 5
@@ -160,6 +163,7 @@ object frmQuestion2: TfrmQuestion2
         Align = alTop
         Caption = 'Orders'
         TabOrder = 1
+        ExplicitWidth = 856
         object dbgOrders: TDBGrid
           AlignWithMargins = True
           Left = 5
@@ -216,6 +220,7 @@ object frmQuestion2: TfrmQuestion2
     ParentBackground = False
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 874
     object btn_RestoreDB: TButton
       Left = 759
       Top = 5

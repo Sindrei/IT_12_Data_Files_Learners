@@ -2,8 +2,8 @@ object frmQuestion1: TfrmQuestion1
   Left = 0
   Top = 0
   Caption = 'Question1 - General programming skills'
-  ClientHeight = 497
-  ClientWidth = 742
+  ClientHeight = 496
+  ClientWidth = 738
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -27,6 +27,12 @@ object frmQuestion1: TfrmQuestion1
       Width = 353
       Height = 34
       Caption = '            1.1 - Format and display          '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 0
       OnClick = btnQ1_1Click
     end

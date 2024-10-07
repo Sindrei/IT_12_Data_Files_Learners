@@ -37,7 +37,7 @@ type
 
 var
   frmQuestion3: TfrmQuestion3;
-  objMonitor : TMonitor;
+  objMonitor: TMonitor;
 
 implementation
 
@@ -46,27 +46,50 @@ implementation
 procedure TfrmQuestion3.btnQ3_2_1Click(Sender: TObject);
 begin
   // Question 3.2.1
+  { •	Extract the IP address from the edit box edtQ3_2_1
+    •	Extract the country of origin from the combo box cmbQ3_2_1.
+    •	Use the information extracted to instantiate the object objMonitor.
+    •	Display a message indicating that the object has been instantiated.
+  }
 
+  objMonitor := TMonitor.Create(edtQ3_2_1.Text, cmbQ3_2_1.Text);
+  ShowMessage('Object Created');
 end;
 
 procedure TfrmQuestion3.btnQ3_2_2Click(Sender: TObject);
 begin
   // Question 3.2.2
+  { •	Call the changeStatus method of the object.
+    •	Use the appropriate method to determine the status of the object.
+    •	If the status of the object is TRUE, change the colour of the circle to lime green.
+    •	If the status of the object is FALSE, change the colour of the circle to red.
+  }
+  objMonitor.changeStatus;
+  if objMonitor.getStatus then
+    shpQ3_2_2.Brush.Color := clLime
+  else
+    shpQ3_2_2.Brush.Color := clred;
 
 end;
 
 procedure TfrmQuestion3.btnQ3_2_3Click(Sender: TObject);
+var
+  sIP: String;
 begin
   // Question 3.2.3
-
+  if objMonitor.checkValidIP then
+    pnlQ3_2_3.Caption := 'IP adress (' + objMonitor.getIP + ') valid!'
+  else
+    pnlQ3_2_3.Caption := 'IP adress (' + objMonitor.getIP + ') NOT valid!';
 end;
 
 procedure TfrmQuestion3.btnQ3_2_4Click(Sender: TObject);
 var
-  iNumOfVisits : Integer;
+  iNumOfVisits: Integer;
 begin
   // Provided code
-  iNumOfVisits := StrToInt(InputBox('Number of visits', 'Please enter number of website visits', '100'));
+  iNumOfVisits := StrToInt(InputBox('Number of visits',
+    'Please enter number of website visits', '100'));
 
   // Question 3.2.4
 

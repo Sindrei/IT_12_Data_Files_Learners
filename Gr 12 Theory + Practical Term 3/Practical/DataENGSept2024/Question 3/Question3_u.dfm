@@ -238,8 +238,8 @@ object frmQuestion3: TfrmQuestion3
         'Zimbabwe')
     end
     object btnQ3_2_1: TButton
-      Left = 152
-      Top = 120
+      Left = 124
+      Top = 112
       Width = 178
       Height = 41
       Caption = '3.2.1 Instantiate Object'
