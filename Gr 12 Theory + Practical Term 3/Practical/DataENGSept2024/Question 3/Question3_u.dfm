@@ -31,6 +31,7 @@ object frmQuestion3: TfrmQuestion3
       Width = 226
       Height = 26
       TabOrder = 0
+      Text = '192.168.6.122'
     end
     object cmbQ3_2_1: TComboBox
       Left = 104
@@ -38,6 +39,7 @@ object frmQuestion3: TfrmQuestion3
       Width = 226
       Height = 26
       TabOrder = 1
+      Text = 'South Africa'
       TextHint = 'Select Country of Origin'
       Items.Strings = (
         'Afghanistan'

@@ -45,7 +45,7 @@ begin
     Number of visits via URL: <Number of direct visits>
     Website accessibility: Active
   }
-  sOut := 'IP address : ' + fCountryOfOrigin + #10 +
+  sOut := fIP + ':' + fCountryOfOrigin + #10 +
     'Number of visits via search engine: ' + IntToStr(fVisits) + #10 +
     'Number of visits via URL: ' + IntToStr(fDirectVisits) + #10 +
     'Website accessibility : ';
@@ -89,8 +89,52 @@ begin
 end;
 
 function TMonitor.checkValidIP: Boolean;
+var
+  sIP: String;
+  iX, iCountDots, iPos, iNumber: Integer;
+  bValid: Boolean;
 begin
+  // 192.168.5.122
+  sIP := fIP;
+  iCountDots := 0;
+  bValid := True;
 
+  // Check if IP adress has three dots
+  for iX := 1 to Length(sIP) do
+  begin
+    if sIP[iX] = '.' then
+      Inc(iCountDots);
+  end;
+
+  // if the dots are more or less than 3 result = False else check the numbers
+  if iCountDots <> 3 then
+  begin
+    bValid := False;
+  end
+  else
+  begin
+    for iX := 1 to 3 do
+    begin
+      iPos := Pos('.', sIP);
+      iNumber := StrToInt(Copy(sIP, 1, iPos - 1));
+      if NOT((iNumber > 0) AND (iNumber < 255)) then
+      begin
+        bValid := False;
+      end;
+      Delete(sIP, 1, iPos);
+    end;
+
+    if bValid = True then
+    begin
+      iNumber := StrToInt(sIP);
+      if NOT((iNumber > 0) AND (iNumber < 255)) then
+      begin
+        bValid := False;
+      end;
+    end;
+  end;
+
+  result := bValid;
 end;
 
 end.

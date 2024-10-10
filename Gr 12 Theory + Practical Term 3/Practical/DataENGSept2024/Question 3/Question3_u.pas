@@ -54,6 +54,7 @@ begin
 
   objMonitor := TMonitor.Create(edtQ3_2_1.Text, cmbQ3_2_1.Text);
   ShowMessage('Object Created');
+  //redQ3.Lines.Add(objMonitor.toString);
 end;
 
 procedure TfrmQuestion3.btnQ3_2_2Click(Sender: TObject);
@@ -77,9 +78,9 @@ var
   sIP: String;
 begin
   // Question 3.2.3
-  if objMonitor.checkValidIP then
+  if objMonitor.checkValidIP = True then
     pnlQ3_2_3.Caption := 'IP adress (' + objMonitor.getIP + ') valid!'
-  else
+  else if objMonitor.checkValidIP = False then
     pnlQ3_2_3.Caption := 'IP adress (' + objMonitor.getIP + ') NOT valid!';
 end;
 
