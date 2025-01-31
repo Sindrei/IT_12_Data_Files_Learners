@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, ExtCtrls, StdCtrls, PhoneClass;
+  Dialogs, Grids, ExtCtrls, StdCtrls, PhoneClass, DateUtils;
 
 type
   TForm1 = class(TForm)
@@ -32,20 +32,43 @@ type
 
 var
   Form1: TForm1;
+  objPhone: TPhone;
+  iCount: Integer = 1;
 
 implementation
 
- {$R *.dfm}
+{$R *.dfm}
 
 procedure TForm1.btnSaveClick(Sender: TObject);
+var
+  sBrand, sModel, sOwner: String;
+  dtPurhaseDate: TDateTime;
+  dPrice: Double;
 begin
-//add test code here
+  // add test code here
+  sBrand := cbxBrand.Text;
+  sModel := edtModel.Text;
+  sOwner := edtOwner.Text;
+  dtPurhaseDate := StrToDate(edtDate.Text);
+  dPrice := StrToFloat(edtPrice.Text);
+
+  objPhone := TPhone.create(sBrand, sModel, sOwner, dtPurhaseDate, dPrice);
+
+  sgrPhones.Cells[0, iCount] := objPhone.getPhone;
+  sgrPhones.Cells[1, iCount] := IntToStr(objPhone.calculateAge);
+  sgrPhones.Cells[2, iCount] := FloatToStrF(objPhone.getPrice,
+    ffCurrency, 8, 2);
+
+  inc(iCount);
+
 end;
-//given code do not remove
+
+// given code do not remove
 procedure TForm1.FormShow(Sender: TObject);
 begin
   sgrPhones.Cells[0, 0] := 'Cell Phone';
   sgrPhones.Cells[1, 0] := 'Age';
   sgrPhones.Cells[2, 0] := 'Price';
 end;
+
 end.
