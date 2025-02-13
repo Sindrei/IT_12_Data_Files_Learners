@@ -1,0 +1,34 @@
+unit cls_car;
+
+interface
+
+// Model, Brand, Year, RetailPrice
+type
+  TCar = class
+  private
+    fModel: String;
+    fBrand: String;
+    fYear: Integer;
+    fRetailPrice: Real;
+  public
+    Constructor Create; overload;
+    Constructor Create(sModel, sBrand: String; iYear: Integer;
+      rRetailPrice: Real); overload;
+  end;
+
+implementation
+
+{ TCar }
+
+constructor TCar.Create(sModel, sBrand: String; iYear: Integer;
+  rRetailPrice: Real);
+begin
+
+end;
+
+constructor TCar.Create;
+begin
+
+end;
+
+end.

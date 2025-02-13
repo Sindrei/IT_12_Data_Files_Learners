@@ -29,7 +29,7 @@ type
 var
   Form1: TForm1;
   objCar: TCar;
-  iRow: Integer = 1;
+  iRow: Integer;
 
 implementation
 
@@ -48,12 +48,9 @@ begin
   rRetailPrice := strtofloat(edtPrice.Text);
   // create object
   objCar := TCar.Create(sModel, sBrand, iYear, rRetailPrice);
+  // call object methods and display in grid
   // Call the methods getDetailedModel and getVATPrice to display the
   // model details and the retail price in the string grid.
-  sgrCars.Cells[0, iRow] := objCar.getDetailedModel;
-  sgrCars.Cells[1, iRow] := FloatToStrF(objCar.getVATPrice, ffCurrency, 10, 2);
-  Inc(iRow);
-
 end;
 
 // given code do not remove

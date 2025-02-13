@@ -1,0 +1,64 @@
+unit cls_car;
+
+interface
+
+// Model, Brand, Year, RetailPrice
+type
+  TCar = class
+  private
+    fModel: String;
+    fBrand: String;
+    fYear: Integer;
+    fRetailPrice: Real;
+  public
+    Constructor Create; overload;
+    Constructor Create(sModel, sBrand: String; iYear: Integer;
+      rRetailPrice: Real); overload;
+    function getDetailedModel: String;
+    procedure setRetailPrice(rPrice: Real);
+    function getRetailPrice: Real;
+    function toString: String;
+    function getVATPrice: Real;
+  end;
+
+implementation
+
+{ TCar }
+
+constructor TCar.Create(sModel, sBrand: String; iYear: Integer;
+  rRetailPrice: Real);
+begin
+
+end;
+
+function TCar.getDetailedModel: String;
+begin
+
+end;
+
+function TCar.getRetailPrice: Real;
+begin
+
+end;
+
+function TCar.getVATPrice: Real;
+begin
+
+end;
+
+procedure TCar.setRetailPrice(rPrice: Real);
+begin
+
+end;
+
+function TCar.toString: String;
+begin
+
+end;
+
+constructor TCar.Create;
+begin
+
+end;
+
+end.
