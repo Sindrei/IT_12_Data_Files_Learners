@@ -35,31 +35,13 @@ var
 
   line: String;
   j, k: Integer;
-  arrMultiplication: Array [1 .. 6, 1 .. 6] of Integer;
 begin
   // Create Times table
-  for j := 1 to 6 do
-  begin
-    for k := 1 to 6 do
-    begin
-      arrMultiplication[j, k] := j * k;
-    end;
-  end;
 
   // Display
   lbxAnswer.clear;
   lbxAnswer.TabWidth := 20;
   line := '';
-
-  for j := 1 to 6 do
-  begin
-    line := '';
-    for k := 1 to 6 do
-    begin
-      line := line + inttostr(arrMultiplication[j, k]) + #9;
-    end;
-    lbxAnswer.Items.Add(line);
-  end;
 
 end;
 
@@ -69,31 +51,13 @@ var
   j: Integer;
   k: Integer;
   line: String;
-  arrNumbers: array [1 .. 9, 1 .. 9] of Integer;
 begin
   // create digits table
-  for j := 1 to 9 do
-  begin
-    for k := 1 to 9 do
-    begin
-      arrNumbers[j, k] := randomrange(1, 10);
-    end;
-  end;
 
   // Display
   lbxAnswer.clear;
   lbxAnswer.TabWidth := 20;
   line := '';
-
-  for j := 1 to 9 do
-  begin
-    line := '';
-    for k := 1 to 9 do
-    begin
-      line := line + inttostr(arrNumbers[j, k]) + #9;
-    end;
-    lbxAnswer.Items.Add(line);
-  end;
 
 end;
 
@@ -103,32 +67,13 @@ var
   j: Integer;
   k: Integer;
   line: String;
-  arrSum: array [1 .. 10, 1 .. 5] of Integer;
-  iCount: Integer;
 begin
   // create sum of indices table
-  for j := 1 to 10 do
-  begin
-    for k := 1 to 5 do
-    begin
-      arrSum[j, k] := j + k;
-    end;
-  end;
 
   // Display
   lbxAnswer.clear;
   lbxAnswer.TabWidth := 20;
   line := '';
-
-  for j := 1 to 10 do
-  begin
-    line := '';
-    for k := 1 to 5 do
-    begin
-      line := line + inttostr(arrSum[j, k]) + #9;
-    end;
-    lbxAnswer.Items.Add(line);
-  end;
 
 end;
 
@@ -145,7 +90,7 @@ begin
   begin
     for k := 1 to 5 do
     begin
-      cChar := chr(randomrange(97, 123));
+      cChar := chr(Randomrange(97, 123));
       arrChars[j, k] := cChar;
     end;
 
@@ -161,7 +106,7 @@ begin
     line := '';
     for k := 1 to 5 do
     begin
-      line := line + arrChars[j, k] + #9;
+      line := line + #9 + arrChars[j, k];
     end;
     lbxAnswer.Items.Add(line);
   end;

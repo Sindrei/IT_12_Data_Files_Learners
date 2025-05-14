@@ -1,2 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2025/02/13 09:42:07.501,=C:\Users\fmalan\Documents\IT_Learner_Files\IT_12_Data_Files_Learners\Chapter 2\02 - myPlaylist\Unit1.pas</Transaction>
+    <Transaction>2025/02/13 09:42:40.010,C:\Users\fmalan\Documents\IT_Learner_Files\IT_12_Data_Files_Learners\Chapter 2\02 - myPlaylist\cls_song.pas=C:\Users\fmalan\Documents\IT_Learner_Files\IT_12_Data_Files_Learners\Chapter 2\02 - myPlaylist\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

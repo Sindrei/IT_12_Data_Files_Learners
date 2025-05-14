@@ -1,0 +1,130 @@
+unit cls_song;
+
+interface
+
+uses
+  SysUtils;
+
+{ A TSong class containing the attributes Artist, Song, Album, TrackNumber and
+  Duration (in seconds) and the
+  following methods:
+  a. A Default and a parameterised constructor.
+  b. Getters and setters for all attributes.
+  c. A toString method.
+  d. A getQuickReference method that returns a string.
+  e. A getMinuteDuration method that returns a string.
+  Name the unit SongClass. }
+
+type
+  TSong = class
+  private
+    fArtist: String;
+    fSong: String;
+    fAlbum: String;
+    fTrackNumber: Integer;
+    fDuration: Integer;
+  public
+    Constructor Create; overload;
+    Constructor Create(sArtist, sSong, sAlbum: String;
+      iTrackNumber, iDuration: Integer); overload;
+    function getArtist: string;
+    function getSong: string;
+    function getAlbum: string;
+    function getTrackNumber: Integer;
+    function getDuration: Integer;
+    procedure setArtist(sArtist: String);
+    procedure setSong(sSong: String);
+    procedure setAlbum(sAlbum: String);
+    procedure setTrackNumber(iTrackNumber: Integer);
+    procedure setDuration(iDuration: Integer);
+    function getQuickReference: String;
+    function getMinuteDuration: String;
+  end;
+
+implementation
+
+{ TSong }
+
+constructor TSong.Create(sArtist, sSong, sAlbum: String;
+  iTrackNumber, iDuration: Integer);
+begin
+  fArtist := sArtist;
+  fSong := sSong;
+  fAlbum := sAlbum;
+  fTrackNumber := iTrackNumber;
+  fDuration := iDuration;
+end;
+
+function TSong.getArtist: string;
+begin
+  result := fArtist;
+end;
+
+function TSong.getDuration: Integer;
+begin
+  result := fDuration;
+end;
+
+function TSong.getMinuteDuration: String;
+var
+  iMin, iSec: Integer;
+begin
+  // The getMinuteDuration function converts the song duration from seconds
+  // to minutes and seconds and returns a string in the format mm:ss.
+  iMin := fDuration DIV 60;
+  iSec := fDuration MOD 60;
+  result := inttostr(iMin) + ':' + inttostr(iSec);
+end;
+
+function TSong.getQuickReference: String;
+begin
+  // The getQuickReference function returns a string in the format ‘Song,~Album~Artist’.
+  result := fSong + ',~' + fAlbum + '~' + fArtist;
+end;
+
+function TSong.getAlbum: string;
+begin
+  result := fAlbum
+end;
+
+function TSong.getSong: string;
+begin
+  result := fSong;
+end;
+
+function TSong.getTrackNumber: Integer;
+begin
+  result := fTrackNumber;
+end;
+
+procedure TSong.setAlbum(sAlbum: String);
+begin
+  fAlbum := sAlbum;
+end;
+
+procedure TSong.setArtist(sArtist: String);
+begin
+  fArtist := sArtist;
+end;
+
+procedure TSong.setDuration(iDuration: Integer);
+begin
+  fDuration := iDuration;
+end;
+
+procedure TSong.setSong(sSong: String);
+begin
+  fSong := sSong;
+end;
+
+procedure TSong.setTrackNumber(iTrackNumber: Integer);
+begin
+  fTrackNumber := iTrackNumber;
+end;
+
+constructor TSong.Create;
+begin
+
+end;
+
+end.

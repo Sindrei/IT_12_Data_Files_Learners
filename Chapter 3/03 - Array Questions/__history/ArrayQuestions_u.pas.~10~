@@ -69,31 +69,13 @@ var
   j: Integer;
   k: Integer;
   line: String;
-  arrNumbers: array [1 .. 9, 1 .. 9] of Integer;
 begin
   // create digits table
-  for j := 1 to 9 do
-  begin
-    for k := 1 to 9 do
-    begin
-      arrNumbers[j, k] := randomrange(1, 10);
-    end;
-  end;
 
   // Display
   lbxAnswer.clear;
   lbxAnswer.TabWidth := 20;
   line := '';
-
-  for j := 1 to 9 do
-  begin
-    line := '';
-    for k := 1 to 9 do
-    begin
-      line := line + inttostr(arrNumbers[j, k]) + #9;
-    end;
-    lbxAnswer.Items.Add(line);
-  end;
 
 end;
 
@@ -145,7 +127,7 @@ begin
   begin
     for k := 1 to 5 do
     begin
-      cChar := chr(randomrange(97, 123));
+      cChar := chr(Randomrange(97, 123));
       arrChars[j, k] := cChar;
     end;
 
