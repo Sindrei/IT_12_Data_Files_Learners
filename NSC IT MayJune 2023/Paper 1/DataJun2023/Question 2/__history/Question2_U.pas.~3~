@@ -1,0 +1,190 @@
+// Enter examination number here
+
+unit Question2_U;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, DB, ExtCtrls, StdCtrls,
+  ComCtrls, Grids, DBGrids, Buttons, ADODB, Math, DateUtils,
+  ConnectDB_U;
+
+type
+  TfrmQuestion2 = class(TForm)
+    pgcDBAdmin: TPageControl;
+    tabsQ2SQL: TTabSheet;
+    btnQ2_1_5: TBitBtn;
+    grpresults: TGroupBox;
+    dbgrdSQL: TDBGrid;
+    btnQ2_1_1: TBitBtn;
+    btnQ2_1_4: TBitBtn;
+    b: TTabSheet;
+    grpQ2_2_1: TGroupBox;
+    redQ2_2_1: TRichEdit;
+    btnQ2_2_1: TButton;
+    dbgManufacturers: TDBGrid;
+    dbgDevices: TDBGrid;
+    grpQ2_2_2: TGroupBox;
+    btnQ2_2_2: TButton;
+    pnlBtns: TPanel;
+    bmbClose: TBitBtn;
+    bmbRestoreDB: TBitBtn;
+    btnQ2_1_3: TButton;
+    GroupBox1: TGroupBox;
+    btnQ2_1_2: TBitBtn;
+    cmbQ2_1_2: TComboBox;
+    Label1: TLabel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure bmbRestoreDBClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnQ2_1_4Click(Sender: TObject);
+    procedure btnQ2_1_3Click(Sender: TObject);
+    procedure btnQ2_1_2Click(Sender: TObject);
+    procedure btnQ2_1_1Click(Sender: TObject);
+    procedure btnQ2_1_5Click(Sender: TObject);
+    procedure btnQ2_2_1Click(Sender: TObject);
+    procedure btnQ2_2_2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmQuestion2: TfrmQuestion2;
+  dbCONN: TConnection;
+  // --- Global variables provided ---
+  tblManufacturers, tblDevices: TADOTable;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmQuestion2.btnQ2_1_1Click(Sender: TObject);
+var
+  sSQL1: String;
+begin
+  // 2.1.1 iOS devices
+  { Display the DeviceID and DeviceName of all devices in the tblDevices table,
+    that use the iOS operating system. }
+  sSQL1 := 'SELECT DeviceID, DeviceName FROM tblDevices WHERE OperatingSystem = "iOS"';
+
+  // Provided code - do not change
+  dbCONN.runSQL(sSQL1);
+end;
+
+procedure TfrmQuestion2.btnQ2_1_2Click(Sender: TObject);
+var
+  sSQL2: String;
+  sDeviceType: String;
+begin
+  // Provided code
+  sDeviceType := cmbQ2_1_2.Text;
+
+  // 2.1.2 Category selected
+  { Display the DeviceName, Category and NumInStock of all devices where the
+    Category field contains the device type selected from the combo box. }
+  sSQL2 := 'SELECT DeviceName, Category, NumInStock FROM tblDevices WHERE Category = "Smart ' + sDeviceType + '"' ;
+
+  // Provided code - do not change
+  dbCONN.runSQL(sSQL2);
+end;
+
+procedure TfrmQuestion2.btnQ2_1_3Click(Sender: TObject);
+var
+  sSql3: String;
+begin
+  // 2.1.3 Online support
+
+  sSql3 := '';
+
+  // Provided code - do not change
+  dbCONN.runSQL(sSql3);
+end;
+
+procedure TfrmQuestion2.btnQ2_1_4Click(Sender: TObject);
+var
+  sSQL4: String;
+begin
+  // 2.1.4 Profit per manufacturer
+
+  sSQL4 := '';
+
+  // Provided code - do not change
+  dbCONN.runSQL(sSQL4);
+end;
+
+procedure TfrmQuestion2.btnQ2_1_5Click(Sender: TObject);
+var
+  sSQL5: String;
+begin
+  // 2.1.5 Remove devices
+
+  sSQL5 := '';
+
+  // Provided code - do not change
+  dbCONN.ExecuteSQL(sSQL5);
+
+end;
+
+procedure TfrmQuestion2.btnQ2_2_1Click(Sender: TObject);
+begin
+  // Provided code
+  redQ2_2_1.Clear;
+
+  // 2.2.1 Display products
+
+end;
+
+procedure TfrmQuestion2.btnQ2_2_2Click(Sender: TObject);
+begin
+  // 2.2.2 Update stock
+
+end;
+
+// ================================================================
+// {$ENDREGION}
+// ================================================================
+// {$REGION 'Provided code: Setup DB connections - DO NOT CHANGE!'}
+// ================================================================
+
+procedure TfrmQuestion2.bmbRestoreDBClick(Sender: TObject);
+begin
+  // Restores the Database
+  dbCONN.RestoreDatabase;
+  redQ2_2_1.Clear;
+  dbCONN.SetupGrids(dbgManufacturers, dbgDevices, dbgrdSQL);
+end;
+
+procedure TfrmQuestion2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  // Disconnects from database and closes all open connections
+  dbCONN.dbDisconnect;
+end;
+
+procedure TfrmQuestion2.FormCreate(Sender: TObject);
+begin
+  // Provided code
+  redQ2_2_1.Paragraph.TabCount := 3;
+  redQ2_2_1.Paragraph.Tab[0] := 20;
+  redQ2_2_1.Paragraph.Tab[1] := 170;
+  redQ2_2_1.Paragraph.Tab[2] := 300;
+  redQ2_2_1.Paragraph.Tab[3] := 400;
+end;
+
+procedure TfrmQuestion2.FormShow(Sender: TObject);
+begin
+  // Sets up the connection to database and opens the tables.
+  dbCONN := TConnection.Create;
+  dbCONN.dbConnect;
+  tblManufacturers := dbCONN.tblOne;
+  tblDevices := dbCONN.tblMany;
+  dbCONN.SetupGrids(dbgManufacturers, dbgDevices, dbgrdSQL);
+  pgcDBAdmin.ActivePageIndex := 0;
+end;
+// =====================================================
+// {$ENDREGION}
+
+end.

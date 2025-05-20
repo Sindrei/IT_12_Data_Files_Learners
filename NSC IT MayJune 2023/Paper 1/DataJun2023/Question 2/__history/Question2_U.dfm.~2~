@@ -1,0 +1,262 @@
+object frmQuestion2: TfrmQuestion2
+  Left = 0
+  Top = 0
+  Caption = 'Database programming'
+  ClientHeight = 611
+  ClientWidth = 777
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  TextHeight = 13
+  object pgcDBAdmin: TPageControl
+    Left = 8
+    Top = 8
+    Width = 761
+    Height = 551
+    ActivePage = tabsQ2SQL
+    Align = alCustom
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    object tabsQ2SQL: TTabSheet
+      Caption = '2.1 - SQL     '
+      ImageIndex = 2
+      object btnQ2_1_5: TBitBtn
+        Left = 354
+        Top = 111
+        Width = 314
+        Height = 40
+        Caption = '   2.1.5 - Remove devices                            '
+        TabOrder = 0
+        OnClick = btnQ2_1_5Click
+      end
+      object grpresults: TGroupBox
+        Left = 3
+        Top = 176
+        Width = 732
+        Height = 340
+        Align = alCustom
+        Caption = 'Results'
+        TabOrder = 1
+        object dbgrdSQL: TDBGrid
+          Left = 13
+          Top = 24
+          Width = 708
+          Height = 305
+          TabOrder = 0
+          TitleFont.Charset = ANSI_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -15
+          TitleFont.Name = 'Arial'
+          TitleFont.Style = []
+        end
+      end
+      object btnQ2_1_1: TBitBtn
+        Left = 25
+        Top = 19
+        Width = 314
+        Height = 40
+        Align = alCustom
+        Caption = '2.1.1 - iOS devices                          '
+        TabOrder = 2
+        OnClick = btnQ2_1_1Click
+      end
+      object btnQ2_1_4: TBitBtn
+        Left = 354
+        Top = 65
+        Width = 314
+        Height = 40
+        Caption = '  2.1.4 - Profit per manufacturer                 '
+        TabOrder = 3
+        OnClick = btnQ2_1_4Click
+      end
+      object btnQ2_1_3: TButton
+        Left = 354
+        Top = 19
+        Width = 314
+        Height = 40
+        Caption = '2.1.3 - Online support                          '
+        TabOrder = 4
+        OnClick = btnQ2_1_3Click
+      end
+      object GroupBox1: TGroupBox
+        Left = 25
+        Top = 65
+        Width = 314
+        Height = 86
+        TabOrder = 5
+        object Label1: TLabel
+          Left = 8
+          Top = 11
+          Width = 63
+          Height = 17
+          Caption = 'Category:'
+        end
+        object btnQ2_1_2: TBitBtn
+          Left = 0
+          Top = 43
+          Width = 314
+          Height = 40
+          Align = alCustom
+          Caption = '   2.1.2 - Category selected                     '
+          TabOrder = 0
+          OnClick = btnQ2_1_2Click
+        end
+        object cmbQ2_1_2: TComboBox
+          Left = 88
+          Top = 8
+          Width = 224
+          Height = 25
+          TabOrder = 1
+          Items.Strings = (
+            'Heating'
+            'Speaker'
+            'Lighting'
+            'TV'
+            'Refrigerator'
+            'Door lock'
+            'Watch')
+        end
+      end
+    end
+    object b: TTabSheet
+      Caption = '2.2 - Delphi code    '
+      ImageIndex = 1
+      object grpQ2_2_1: TGroupBox
+        Left = 3
+        Top = 242
+        Width = 727
+        Height = 199
+        Caption = '2.2.1'
+        TabOrder = 0
+        object redQ2_2_1: TRichEdit
+          Left = 16
+          Top = 67
+          Width = 697
+          Height = 122
+          ScrollBars = ssVertical
+          TabOrder = 0
+        end
+        object btnQ2_2_1: TButton
+          Left = 16
+          Top = 26
+          Width = 697
+          Height = 35
+          Caption = '2.2.1 - Display products'
+          TabOrder = 1
+          WordWrap = True
+          OnClick = btnQ2_2_1Click
+        end
+      end
+      object dbgManufacturers: TDBGrid
+        Left = 3
+        Top = 3
+        Width = 727
+        Height = 114
+        Align = alCustom
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -13
+        TitleFont.Name = 'Arial'
+        TitleFont.Style = []
+      end
+      object dbgDevices: TDBGrid
+        Left = 3
+        Top = 123
+        Width = 724
+        Height = 113
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -13
+        TitleFont.Name = 'Arial'
+        TitleFont.Style = []
+      end
+      object grpQ2_2_2: TGroupBox
+        Left = 3
+        Top = 442
+        Width = 724
+        Height = 76
+        Caption = '2.2.2'
+        TabOrder = 3
+        object btnQ2_2_2: TButton
+          Left = 16
+          Top = 26
+          Width = 697
+          Height = 35
+          Caption = '2.2.2 - Update stock'
+          TabOrder = 0
+          OnClick = btnQ2_2_2Click
+        end
+      end
+    end
+  end
+  object pnlBtns: TPanel
+    Left = 8
+    Top = 560
+    Width = 761
+    Height = 48
+    Align = alCustom
+    TabOrder = 1
+    DesignSize = (
+      761
+      48)
+    object bmbClose: TBitBtn
+      Left = 614
+      Top = 10
+      Width = 119
+      Height = 35
+      Anchors = [akRight, akBottom]
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Arial Narrow'
+      Font.Style = []
+      Kind = bkClose
+      NumGlyphs = 2
+      ParentFont = False
+      TabOrder = 0
+    end
+    object bmbRestoreDB: TBitBtn
+      Left = 388
+      Top = 10
+      Width = 220
+      Height = 35
+      Anchors = [akRight, akBottom]
+      Caption = 'Restore database'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Arial Narrow'
+      Font.Style = []
+      Kind = bkRetry
+      NumGlyphs = 2
+      ParentFont = False
+      TabOrder = 1
+      OnClick = bmbRestoreDBClick
+    end
+  end
+end
