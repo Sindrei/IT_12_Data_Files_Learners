@@ -124,20 +124,21 @@ begin
         begin
           for l := j - 1 to j + 1 do
           begin
-            if (k > 0) AND (k < 6) AND (l > 0) AND (l < 7) then
+            if (k > 0) AND (k < 6) AND (l > 0 AND l < 7) then
             begin
-              if (arrNetwork[k, l] = '_') then
-              begin
-                arrNetwork[k, l] := '*';
-              end;
+
+            end;
+
+            if (arrNetwork[k, l] = '_') AND (k > 0) AND (k < 6) then
+            begin
+              arrNetwork[k, l] := '*';
             end;
           end;
         end;
       end;
+
     end;
   end;
-
-  btnQ4_1.Click;
 
 end;
 

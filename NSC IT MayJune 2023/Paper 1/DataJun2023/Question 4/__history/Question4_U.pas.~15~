@@ -106,38 +106,13 @@ end;
 
 procedure TfrmQuestion4.btnQ4_3Click(Sender: TObject);
 var
-  i, j, k, l: Integer;
+  i, j: Integer;
 begin
   // 4.3 Coverage
   { Write code to do the following:
      Add coverage symbols (*) around all the access points in the campus
     network saved in array arrNetwork.
      Display array arrNetwork after the coverage symbols have been added. }
-  for i := 1 to 5 do
-  begin
-    for j := 1 to 6 do
-    begin
-      if arrNetwork[i, j] = 'A' then
-      begin
-        // for loops to add * sign
-        for k := i - 1 to i + 1 do
-        begin
-          for l := j - 1 to j + 1 do
-          begin
-            if (k > 0) AND (k < 6) AND (l > 0) AND (l < 7) then
-            begin
-              if (arrNetwork[k, l] = '_') then
-              begin
-                arrNetwork[k, l] := '*';
-              end;
-            end;
-          end;
-        end;
-      end;
-    end;
-  end;
-
-  btnQ4_1.Click;
 
 end;
 

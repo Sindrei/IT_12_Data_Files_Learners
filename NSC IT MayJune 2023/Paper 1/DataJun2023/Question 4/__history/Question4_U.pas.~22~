@@ -126,7 +126,7 @@ begin
           begin
             if (k > 0) AND (k < 6) AND (l > 0) AND (l < 7) then
             begin
-              if (arrNetwork[k, l] = '_') then
+              if (arrNetwork[k, l] = '_') AND (k > 0) AND (k < 6) then
               begin
                 arrNetwork[k, l] := '*';
               end;
@@ -134,10 +134,9 @@ begin
           end;
         end;
       end;
+
     end;
   end;
-
-  btnQ4_1.Click;
 
 end;
 
